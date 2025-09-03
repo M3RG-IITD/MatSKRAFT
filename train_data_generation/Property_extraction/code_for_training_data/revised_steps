@@ -1,0 +1,13 @@
+New steps:
+
+1. create_combined_database.ipynb
+2. distant_supervision_kausik_max_on_discomat_new.ipynb
+3. check_after_ds_after_choosing_property.ipynb 
+4. prop_before_final.ipynb -- This step needs to go up.
+5. add_keys_to_string_matched_list_&_create_combined_labelled_train.ipynb
+6. check_for_units.ipynb
+7. check_normalization.ipynb
+8. add_non_prop.ipynb
+9. add_ids_from_manual_annotation.ipynb -- if necessary, use create_val_pkl_before_tuple for creating pkl from anno
+10. tuple_generation.ipynb
+11. modify_data.ipynb
