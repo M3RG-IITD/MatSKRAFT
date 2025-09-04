@@ -41,7 +41,7 @@ Each variant is trained and evaluated on the same splits; metrics are **F1 score
 ```
 bash compute_combined_results.sh
 ```
-On executing the above files, one can verify all the ablation studies performed on the composition extraction component.
+On executing the above files in the [evaluation folder under composition extraction](./Composition_extraction/code/evaluation), one can verify all the ablation studies performed on the composition extraction component.
 
 ## 
 
