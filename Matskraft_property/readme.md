@@ -76,7 +76,7 @@ from post_processing_2 import *
 Inferencing is performed with:
 
 ```bash
-bash run_test_2_layer_sep_splits_inference.sh
+bash run_test_inference.sh
 ```
 
 ## Frequency distribution of extracted properties 
