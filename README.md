@@ -65,8 +65,8 @@ For detailed results, see our paper [MatSKRaFT: A framework for large-scale mate
 - [Composition Extraction](./Matskraft_composition)  
   Contains code for extracting constituting elements or compounds, values, and corresponding units from heterogeneous table formats in materials science.
 
-- [Knowledge-Base Integration](./Linking_the_extracted_info_and_final_evaluation)  
-  Code to evaluate both the extraction tasks performed by our framework. We then link the extracted compositions with properties using orientation-aware linking for intra-table and material-id linking for connecting information across different tables belonging to the same article, and finally for the structured knowledge-base, and obtain the final scores after linking.  
+- [Knowledge-Base Integration and Evaluation](./Linking_the_extracted_info_and_final_evaluation)  
+  Code to evaluate both the extraction tasks performed by our framework with respect to the expert-annotated test dataset. We then link the extracted compositions with properties using orientation-aware linking for intra-table and material-id linking for inter-table to form the structured knowledge-base, upon which we evaluate the final scores after linking.  
   
  - [Baseline Comparison](./baselines)  
   Contains code for baseline comparison on property and composition extraction.  
