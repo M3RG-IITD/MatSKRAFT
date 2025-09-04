@@ -1,8 +1,6 @@
 # MatSKRAFT
 This repo contains all the data and code related to our paper [MatSKRAFT — A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/abs/XXXX.XXXXX).
 
----
-
 ## Overview
 
 We introduce **MatSKRAFT**, a unified framework for **large-scale extraction of properties and compositions from scientific tables, followed by the knowledge-base construction**.
