@@ -126,6 +126,8 @@ Implements statistically guided augmentation by injecting synthetic tuples into 
 **Output:**  
 A balanced, physically plausible training dataset enriched with statistically consistent synthetic tuples — significantly expanding coverage of rare materials properties while preserving the natural frequency distribution of the original data (see Figure A.1 in article).
 
+![MatSKRAFT](ds_anno_aug (12).png)
+
 #### Post augmentation
 
 Follows the notebook sequence to finalize clean, unit-consistent tuples for downstream training:
