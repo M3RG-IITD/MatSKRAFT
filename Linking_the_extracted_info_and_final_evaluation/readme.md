@@ -3,7 +3,6 @@
 Merges predicted compositions and properties into a unified, machine-readable database and computes **official evaluation metrics** at the integrated level.  
 Final performance is benchmarked against a gold standard constructed via expert annotation.
 
----
 
 ## Overview
 
@@ -13,7 +12,6 @@ The workflow proceeds in three phases:
 2. Integrate them using intra and inter-table alignment via **table orienation and material IDs respectively**.
 3. Score predictions against gold database to obtain **final metrics**.
 
----
 
 ## Follow the Notebooks in Order
 
@@ -87,7 +85,6 @@ Computes official end-to-end metrics after database integration.
 > **Note:** Post-linking scores include additional integration checks during linking that enhance consistency and slightly improve performance. For transparency, the article reports **pre-linking scores** obtained from the property and composition modules, while this repository presents both the pre-linked and the **post-linked results** for transparency.
 
 
----
 
 ## Output Schema
 
