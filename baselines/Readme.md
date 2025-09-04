@@ -11,7 +11,7 @@ These notebooks replicate the experiments reported in **Section 2.3.3 (Benchmark
 - **Composition extraction baseline**  
   Implemented in `composition_baseline.ipynb` and evaluated by `check_scores_composition_baselines.ipynb`.
 
-  ![MatSKRAFT](Figure_2.pdf)
+  ![MatSKRAFT](Figure_2.png)
   
   Both baseline comparisons use optimized few-shot prompts enriched with textual context, carefully tuned on a small validation set, and include parser-aware safeguards, auto-fallbacks for malformed generations, and multiple-retry mechanisms for rate-limit or generation failures. These baselines evaluate LLM performance on the same held-out test splits used by MatSKRaFT, ensuring direct comparability.  
 ---
