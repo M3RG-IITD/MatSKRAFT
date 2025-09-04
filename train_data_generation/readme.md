@@ -186,4 +186,4 @@ Applies Annotation Codes to enrich the distantly-supervised datasets. This imple
 - False positive filtering to eliminate non-compositional values.  
 - Coverage expansion beyond distant supervision, systematically labeling compositional rows and columns absent in database matches, increasing both the quantity and quality of training examples.  
 
-Final Output: train_data_comp_final.pkl — a chemically validated and structurally diverse dataset, essential for training MatSKRaFT_C with robust coverage of real-world reporting formats.
+Final Output: a chemically validated and structurally diverse dataset, essential for training MatSKRaFT_C with robust coverage of real-world reporting formats.
