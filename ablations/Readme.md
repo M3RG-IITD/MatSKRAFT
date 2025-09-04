@@ -1,11 +1,11 @@
 # Ablation Studies
 
 We quantify the contribution of each component using **single-factor** and **combined** ablations on the test dataset (see Appendix B).  
-Each variant is trained and evaluated on the same splits; metrics are **F1 / Precision / Recall**.
+Each variant is trained and evaluated on the same splits; metrics are **F1 score / Precision / Recall**.
 
 ## Property Extraction (MatSKRaFT_P)
 
-| Model Configuration                              | F1    | Precision | Recall |
+| Model Configuration                              | F1 score    | Precision | Recall |
 |--------------------------------------------------|------:|----------:|-------:|
 | **MatSKRaFT_P (full)**                           | **88.68** | 90.35     | 87.07  |
 | w/o Constrained learning*                        | 88.38 | 88.04     | 88.72  |
@@ -28,7 +28,7 @@ Each variant is trained and evaluated on the same splits; metrics are **F1 / Pre
 
 ## Composition Extraction (MatSKRaFT_C)
 
-| Model Configuration              | F1    | Precision | Recall |
+| Model Configuration              | F1 score    | Precision | Recall |
 |----------------------------------|------:|----------:|-------:|
 | **MatSKRaFT_C (full)**           | **71.35** | **82.31** | **62.97** |
 | w/o Thresholding                 | 68.73 | 78.19     | 61.32  |
