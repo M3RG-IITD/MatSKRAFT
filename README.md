@@ -70,6 +70,6 @@ Full detailed breakdowns are presented in the article and the [Ablation Studies]
 
 
 - [Ablation Studies](./ablations)  
-  Contains code and configs for running ablation experiments on data prep and architecture components.  
+  Contains code and configs for running ablation experiments on data preparation strategies and architecture components.  
 
 
