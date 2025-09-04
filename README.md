@@ -8,12 +8,12 @@ This repo contains all the data and code related to our paper [MatSKRAFT — A f
 We introduce **MatSKRAFT**, a unified framework for **large-scale extraction of properties and compositions from scientific tables, followed by the knowledge-base construction**.
 
 
-### Key innovations
+## Key innovations
 - **Hierarchical data preparation**: integrates *distant supervision*, *property-specific annotation algorithms*, and *strategic data-augmentation* to construct balanced, high-quality training datasets.
 - **Specialized GNN-based extraction models**: Property and composition extraction using GNN-based models, with constrained-learning and post-processing.
 - **Knowledge-base integration**: links extracted compositions and properties through orientation-aware and cross-table entity linking, enabling knowledge base construction, which demonstrates impactful applications.
 
-### Results
+## Results
 MatSKRaFT achieves **state-of-the-art performance** across composition and property extraction:
 - For property extraction : **Precision - 90.35, Recall - 87.07, F1 score - 88.68.**
 - For composition extraction : **Precision - 82.31, Recall - 62.97, F1 score - 71.35 .**
@@ -50,12 +50,8 @@ Together, these components elevate overall performance, demonstrating that **Mat
 Full results and detailed breakdowns are presented in the [Ablation Studies](./ablation) section.
 
 
----
-
 For detailed results, see our paper [MatSKRaFT: A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/abs/XXXX.XXXXX)._  
 
-
----
 
 ## File Structure
 
