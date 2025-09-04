@@ -22,7 +22,7 @@ Each variant is trained and evaluated on the same splits; metrics are **F1 score
 **Observation :** The largest drops come from removing **Post-processing** (−9.38 F1) and **Annotation codes** (−9.02 F1). Caption context and data augmentation also provide consistent gains.
 
 
-**Using the logs** : Each ablation run writes a plain-text summary (e.g., `ablation_*.txt`) with the metrics obtained while training the ablation models.  
+**Using the logs** : Each ablation run writes a plain-text summary (e.g., `ablation_*.txt`) with the detailed metrics obtained while training the ablation models, stored in [property extraction folder](./Property_extraction/).  
 
 ---
 
