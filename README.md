@@ -62,7 +62,7 @@ Full detailed breakdowns are presented in the article and the [Ablation Studies]
 - [Composition Extraction](./Matskraft_composition)  
   Contains code for extracting constituting elements or compounds, values, and corresponding units from heterogeneous table formats in materials science.
 
-- [Knowledge-Base Integration and Evaluation](./Linking_the_extracted_info_and_final_evaluation)  
+- [Knowledge-Base Construction and Comprehensive Evaluation](./Linking_the_extracted_info_and_final_evaluation)  
   Code to evaluate both the extraction tasks performed by our framework with respect to the expert-annotated test dataset. We then link the extracted compositions with properties using orientation-aware linking for intra-table and material-id linking for inter-table to form the structured knowledge-base, upon which we evaluate the final scores after linking.  
   
  - [Baseline Comparison](./baselines)  
