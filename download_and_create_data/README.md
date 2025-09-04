@@ -1,6 +1,4 @@
-## DiSCoMaT Dataset
-
-### Steps to download XMLs and create dataset
+## Steps to download XMLs and create dataset
 
 ```bash
 python download_xml_from_dois.py
