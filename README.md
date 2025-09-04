@@ -45,10 +45,7 @@ Our ablations confirm that MatSKRaFT’s high performance comes from the **syner
 Together, these components elevate overall performance, demonstrating that **MatSKRaFT’s strength lies in its multi-component design**.
 
 
-Full results and detailed breakdowns are presented in the [Ablation Studies](./ablation) section.
-
-
-For detailed results, see our paper [MatSKRaFT: A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/abs/XXXX.XXXXX)._  
+Full detailed breakdowns are presented in the article and the [Ablation Studies](./ablation) section.
 
 
 ## File Structure
