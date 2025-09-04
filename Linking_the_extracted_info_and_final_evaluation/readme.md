@@ -97,7 +97,8 @@ Each record in the integrated database (`database_pred.pkl`) follows:
   material_id,              # material identifier if available
   proxy_id,                 # universal linking key 
   composition_tuples_sorted,# list of constituents [(element1, quantity, unit), (element2, quantity, unit), ...]  tuples
-  property_tuple            # (property_name, value, unit)
+  property_tuple,           # (property_name, value, unit)
+  journal_name,             # journal to which the article belongs
 ]
 ```
 
