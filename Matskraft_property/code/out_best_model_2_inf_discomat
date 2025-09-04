@@ -1,6 +1,0 @@
-368
-using device: cuda
-Namespace(add_constraint=True, alphas=[0.75], c_loss_lambda=50.0, hidden_layer_sizes=[2048, 1024], lm_lr=1e-05, lr=5e-05, model_variant='best_model_2', num_epochs=15, num_heads=[4, 4], res_file='res_best_model_2_inf_discomat_res.pkl', seeds=[2], use_caption=True)
-368
-using device: cuda
-Namespace(add_constraint=True, alphas=[0.75], c_loss_lambda=50.0, hidden_layer_sizes=[2048, 1024], lm_lr=1e-05, lr=5e-05, model_variant='best_model_2', num_epochs=15, num_heads=[4, 4], res_file='res_best_model_2_inf_discomat_res.pkl', seeds=[2], use_caption=True)
