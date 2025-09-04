@@ -7,7 +7,7 @@ We introduce **MatSKRAFT**, a unified framework for **large-scale extraction of 
 
 
 ## Key innovations
-- **Hierarchical data preparation**: integrates *distant supervision*, *property-specific annotation algorithms*, and *strategic data-augmentation* to construct balanced, high-quality training datasets.
+- **Hierarchical data preparation**: integrates distant supervision, property-specific annotation algorithms, and strategic data-augmentation to construct balanced, high-quality training datasets.
 - **Specialized GNN-based extraction models**: Property and composition extraction using GNN-based models, with constrained-learning and post-processing.
 - **Knowledge-base integration**: links extracted compositions and properties through orientation-aware and cross-table entity linking, enabling knowledge base construction, which demonstrates impactful applications.
 
