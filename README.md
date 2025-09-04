@@ -63,7 +63,7 @@ For detailed results, see our paper [MatSKRaFT: A framework for large-scale mate
   Contains code for extracting property names, values, and units from tables; includes unit normalization, validation, and disambiguation routines.  
 
 - [Composition Extraction](./Matskraft_composition)  
-  Contains code for parsing SCC, MCC, and PI tables, normalizing stoichiometry, and validating chemical plausibility.  
+  Contains code for extracting constituting elements or compounds, values, and corresponding units from heterogeneous table formats in materials science.
 
 - [Knowledge-Base Integration](./Linking_the_extracted_info_and_final_evaluation)  
   Code to evaluate both the extraction tasks performed by our framework. We then link the extracted compositions with properties using orientation-aware linking for intra-table and material-id linking for connecting information across different tables belonging to the same article, and finally for the structured knowledge-base, and obtain the final scores after linking.  
