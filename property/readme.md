@@ -79,6 +79,8 @@ Inferencing is performed with:
 bash run_test_2_layer_sep_splits_inference.sh
 ```
 
+![property_distribution](glass_properties_github.png)
+
 <!-- ## Results
 
 MatSKRAFT’s property extraction achieves **state-of-the-art performance**:
