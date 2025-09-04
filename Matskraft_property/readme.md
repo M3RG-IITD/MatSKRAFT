@@ -81,3 +81,4 @@ bash run_test_2_layer_sep_splits_inference.sh
 
 ## Frequency distribution of extracted properties 
 
+![Frequency distribution of extracted properties](properties_freq.png)
