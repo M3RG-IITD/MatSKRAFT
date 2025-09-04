@@ -12,7 +12,6 @@ dependencies:
   - plotly-orca
   - matplotlib=3.4.2
   - mscorefonts
-# Pip-only / easier via pip
 - pip:
   - transformers==4.6.1
   - tokenizers==0.10.3
