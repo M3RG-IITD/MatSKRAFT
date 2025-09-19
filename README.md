@@ -1,5 +1,5 @@
 # MatSKRAFT
-This repo contains all the data and code related to our paper [MatSKRAFT — A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/abs/XXXX.XXXXX).
+This repo contains all the data and code related to our paper [MatSKRAFT — A framework for large-scale materials knowledge extraction from scientific tables]([https://arxiv.org/abs/XXXX.XXXXX](https://arxiv.org/abs/2509.10448)).
 
 ## Overview
 
