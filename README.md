@@ -1,5 +1,5 @@
 # MatSKRAFT
-This repo contains all the data and code related to our paper [MatSKRAFT — A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/abs/XXXX.XXXXX).
+This repo contains all the data and code related to our paper [MatSKRAFT — A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/pdf/2509.10448).
 
 ## Overview
 
@@ -70,6 +70,16 @@ Full detailed breakdowns are presented in the article and the [Ablation Studies]
 
 
 - [Ablation Studies](./ablations)  
-  Contains code and configs for running ablation experiments on data preparation strategies and architecture components.  
+  Contains code and configs for running ablation experiments on data preparation strategies and architecture components.
+
+# Cite as
+```
+@article{hira2025matskraft,
+  title={MatSKRAFT: A framework for large-scale materials knowledge extraction from scientific tables},
+  author={Hira, Kausik and Zaki, Mohd and Krishnan, NM and others},
+  journal={arXiv preprint arXiv:2509.10448},
+  year={2025}
+}
+```
 
 
