@@ -9,7 +9,8 @@ from units import *
 
 
 # paper_data = pickle.load(open('../data/inference_paper_text.pkl', 'rb'))
-paper_data = pickle.load(open('../data/train_val_test_paper_data_test.pkl', 'rb'))
+# paper_data = pickle.load(open('../data/train_val_test_paper_data_test.pkl', 'rb'))
+paper_data = pickle.load(open('../data/train_val_test_paper_data.pkl', 'rb'))
 
 
 
@@ -181,7 +182,20 @@ def check_table_for_prop(pii, t_idx, prop_name):
         if 'melting tem' in combined_text or 'tm' in combined_text or 't m' in combined_text:
             return True
 
-    elif prop_name in ['Refractive index', 'Abbe value', 'Poisson ratio', 'Dielectric constant']:
+    elif prop_name in ['Refractive index', 'Abbe value', 'Dielectric constant']:
+        return True
+
+    elif prop_name in ['Poisson ratio']:
+        elements_compounds = pickle.load(open('elements_compounds.pkl', 'rb'))
+        all_elements, all_compounds = elements_compounds['elements'], elements_compounds['compounds']
+        elements_lower = {e.lower() for e in all_elements}
+        tokens = combined_text.split()
+        for idx, tok in enumerate(tokens):
+            if tok == 'v':
+                neighbors = [tokens[idx + offset] for offset in (-2, -1, 1, 2)
+                             if 0 <= idx + offset < len(tokens)]
+                if neighbors and all(n in elements_lower for n in neighbors):
+                    return False
         return True
     
     elif prop_name in ["Young's modulus"]:
