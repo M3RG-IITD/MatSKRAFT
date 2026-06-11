@@ -17,13 +17,14 @@ from transformers import set_seed, get_linear_schedule_with_warmup
 # from matplotlib import pyplot as plt
 
 from gnn_model_infer import GNN_Model as Model
-from utils import *
 from units import *
 from post_processing import *
 from post_processing_2 import *
+from utils_infer import *  # we moved it to last, overwrites comp_data/comp_data_dict set by utils.py pulled in via post_processing/units
 import re
 import math
 import pdb
+import time
 
 os.environ["CUBLAS_WORKSPACE_CONFIG"]=":4096:8"
 pd.set_option('display.max_columns', None)
@@ -80,7 +81,7 @@ cache_dir = os.path.join(table_dir, '.cache')
 dataset = TableDataset(comp_data)
 
 set_seed(seed)
-batch_size = 4
+batch_size = 8
 num_workers = mp.cpu_count()
 
 data_loader = DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, collate_fn=lambda x: x)
@@ -415,6 +416,18 @@ def eval_model(split, debug=False):
             tepoch.set_description(f'infer mode')
             comp_gid_logits, comp_gid_labels = model(batch_data)
 
+            # Per-property alpha thresholds (from task5_data_driven_alpha.py):
+            #   Density (2)=0.90, Abbe value (5)=0.90, Poisson ratio (9)=0.90
+            #   Annealing Point (16)=0.90, Thermal expansion (17)=0.90, Bulk modulus (19)=0.50
+            _ALPHA = {2: 0.90, 5: 0.90, 9: 0.90, 16: 0.90, 17: 0.90, 19: 0.50}
+            comp_gid_probs = F.softmax(comp_gid_logits, dim=1)
+            for i, elem in enumerate(comp_gid_probs.argmax(1)):
+                elem = elem.item()
+                if elem in _ALPHA and comp_gid_probs[i][elem].item() < _ALPHA[elem]:
+                    leng = len(comp_gid_logits[i])
+                    comp_gid_logits[i] = torch.tensor([0.0] * leng)
+                    comp_gid_logits[i][0] = 0.50
+
             pred_comp_gid_labels = comp_gid_logits.argmax(1).cpu().detach().tolist() # TODO: check
             del comp_gid_logits, comp_gid_labels
 
@@ -507,10 +520,23 @@ def eval_model(split, debug=False):
     new_pred_tup = remove_spaces_from_units(new_pred_tup)
 
     return identifier, y_comp_pred, ret_comp_pred, ret_tuples_pred, new_pred_tup, ulti_gold_tuples
-        
-model_path = f"../final_models/{args.model_variant}.bin"
-model.load_state_dict(torch.load(model_path, map_location=device))
+
+## For python<3.9
+# model_path = f"../final_models/{args.model_variant}.bin"
+# model.load_state_dict(torch.load(model_path, map_location=device))
+# model = model.to(device)
+
+## For python>=3.9
+model_path = f"{args.model_variant}.bin"
+_ckpt = torch.load(model_path, map_location=device)
+# DGL version compat: older DGL stored GATConv residual bias as 'bias';
+# newer DGL stores it inside res_fc as 'res_fc.bias'.
+_ckpt = {('gat_layers.1.res_fc.bias' if k == 'gat_layers.1.bias' else k): v
+         for k, v in _ckpt.items()}
+model.load_state_dict(_ckpt)
 model = model.to(device)
+
+start_time = time.time()
 
 # res = {'train': dict(), 'val': dict(), 'test': dict()}
 res = {'infer': dict()}
@@ -520,7 +546,10 @@ for split in ['infer']: #['train', 'val', 'test']:
 # for split in ['val', 'test']:
     res[split]['identifier'], res[split]['y_comp_pred'], res[split]['ret_comp_pred'], res[split]['ret_tuples_pred'], res[split]['pred_tuples'], res[split]['gold_tuples'] = eval_model(split, debug=True)
 
-
+end_time = time.time()
+elapsed  = end_time - start_time
+total_tables = len(res['infer']['identifier']) if 'identifier' in res['infer'] else 0
+print(f"Inference complete in {elapsed:.1f}s  |  Total tables: {total_tables}")
 
 if args.res_file:
     os.makedirs(os.path.join(table_dir, 'res_dir_without_threshold'), exist_ok=True)
