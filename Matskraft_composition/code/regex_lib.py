@@ -5,6 +5,7 @@ import pathlib
 import pickle
 import re
 import time
+import signal
 
 from normalize_text import normalize
 
@@ -377,7 +378,24 @@ def is_inside(sub_span, span):
     return span[0] <= sub_span[0] and sub_span[1] <= span[1]
 
 
+def _timeout_handler(signum, frame):
+    raise TimeoutError()
+
 def parse_composition(s, compounds=None):
+    signal.signal(signal.SIGALRM, _timeout_handler)
+    signal.alarm(60)
+    try:
+        return _parse_composition_inner(s, compounds)
+    except TimeoutError:
+        print('Internal time out (SIGALRM)')
+        return []
+    finally:
+        signal.alarm(0)
+
+def _parse_composition_inner(s, compounds=None):
+    if s is None:
+        return []
+    s = str(s)  # coerce any non-string scalar (e.g. float) to string
     start_time = time.time()
     s = s.replace('·', '*').replace('—', '-')
     
@@ -399,7 +417,6 @@ def parse_composition(s, compounds=None):
         sub_pat, pat = pattern(compounds)
         if sub_pat is None and pat is None: continue
         curr_res = parse(s, sub_pat, pat, specific=compounds is not None)
-#         print(parse, curr_res)
         for x in curr_res:
             assert len(x) == 2 and len(x[1]) == 2
             st, en = x[1]
@@ -427,6 +444,4 @@ def parse_composition(s, compounds=None):
             for idx in sorted(overlap_idxs, reverse=True):
                 del res[idx]
             res.append(x)
-    
-            
     return res
