@@ -13,9 +13,9 @@ We introduce **MatSKRAFT**, a unified framework for **large-scale extraction of 
 
 ## Results
 MatSKRaFT achieves **state-of-the-art performance** across composition and property extraction:
-- For property extraction : **Precision - 90.35, Recall - 87.07, F1 score - 88.68.**
+- For property extraction : **Precision - 92.40, Recall - 86.45, F1 score - 89.33.**
 - For composition extraction : **Precision - 82.31, Recall - 62.97, F1 score - 71.35 .**
-- At database scale, MatSKRaFT extracted **535,000+ entries from 68,933 tables across 47,242 papers** with **78.08% precision**.
+- At database scale, MatSKRaFT extracted **509,000+ entries from over 66,000 tables across 45,507 papers** with **79.04% precision**.
 
 Crucially, other than its high accuracy, MatSKRaFT is also computationally efficient, processing a table over 19-496× faster than LLM baselines. This high efficiency, along with reliable extraction accuracy, enabled large-scale extraction in a reasonable time on a single V100 GPU.
 
@@ -71,6 +71,12 @@ Full detailed breakdowns are presented in the article and the [Ablation Studies]
 
 - [Ablation Studies](./ablations)  
   Contains code and configs for running ablation experiments on data preparation strategies and architecture components.
+
+
+# Matskraft environment
+chmod +x install_requirements.sh             #Make the .sh file executable and run
+bash install_requirements.sh                 #Single line command to create the entire environment
+
 
 # Cite as
 ```
