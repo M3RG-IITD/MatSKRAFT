@@ -73,10 +73,11 @@ Full detailed breakdowns are presented in the article and the [Ablation Studies]
   Contains code and configs for running ablation experiments on data preparation strategies and architecture components.
 
 
-# Matskraft environment
-chmod +x install_requirements.sh             #Make the .sh file executable and run
-bash install_requirements.sh                 #Single line command to create the entire environment
-
+```bash
+# MatSKRAFT Environment Setup
+chmod +x install_requirements.sh    # Make the .sh file executable
+bash install_requirements.sh        # Single command to create the entire environment
+```
 
 # Cite as
 ```
