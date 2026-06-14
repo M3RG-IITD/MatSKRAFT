@@ -81,4 +81,4 @@ bash run_test_inference.sh
 
 ## Frequency distribution of extracted properties 
 
-![Frequency distribution of extracted properties](properties_freq.png)
+![Frequency distribution of extracted properties](properties_freq_upd.png)
